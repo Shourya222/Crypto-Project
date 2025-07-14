@@ -1,11 +1,17 @@
 import './App.css'
+import Banner from './Components/Banner/Banner'
+import CoinTable from './Components/CoinTable'
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
 
   return (
     <>
-      <button class="btn btn-primary">Button</button>
+      <Navbar />
+      <Banner />
+      <CoinTable />
     </>
+    
   )
 }
 
