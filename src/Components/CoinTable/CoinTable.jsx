@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { fetchCoinData } from "../../services/fetchCoinData";
 import { useQuery } from "@tanstack/react-query";
+import { CurrencyContext } from "../../context/CurrencyContext";
 
-function CoinTable({currency}) {
+function CoinTable() {
+  const {currency} = useContext(CurrencyContext)
   const [page, setPage] = useState(1);
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["coins", page, currency],
@@ -26,7 +28,7 @@ function CoinTable({currency}) {
         <div className="w-full bg-yellow-400 text-black flex py-4 px-2 font-semibold items-center justify-center">
           {/* Header of the tabel */}
           <div className="basis-[35%]">Coin</div>
-          <div className="basis-[25%]">Price</div>
+          <div className="basis-[25%]">{`Price (in ${currency})`}</div>
           <div className="basis-[20%]">24h change</div>
           <div className="basis-[20%]">Market Cap</div>
         </div>
