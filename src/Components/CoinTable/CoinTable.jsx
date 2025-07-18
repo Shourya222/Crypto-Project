@@ -25,7 +25,7 @@ function CoinTable() {
   return (
     <>
       <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto">
-        <div className="w-full bg-yellow-400 text-black flex py-4 px-2 font-semibold items-center justify-center">
+        <div className="w-full bg-yellow-400 text-black flex gap-3 py-4 px-2 font-semibold items-center justify-center">
           {/* Header of the tabel */}
           <div className="basis-[35%]">Coin</div>
           <div className="basis-[25%]">{`Price (in ${currency})`}</div>
@@ -40,10 +40,10 @@ function CoinTable() {
               return (
                 <div
                   key={coin.id}
-                  className="w-full bg-transparent text-white flex py-4 px-2 font-semibold items-center justify-between"
+                  className="w-full bg-transparent text-white flex gap-3 py-4 px-2 font-semibold items-center justify-between"
                 >
                   <div className="flex items-center justify-start gap-3 basis-[35%]">
-                    <div className="w-[5rem] h-[rem]">
+                    <div className="w-[4rem] h-[4rem]">
                       <img src={coin.image} className="w-full h-full" />
                     </div>
                     <div className="flex flex-col">
@@ -51,9 +51,9 @@ function CoinTable() {
                       <div className="text-xl">{coin.symbol}</div>
                     </div>
                   </div>
-                  <div className="basis-[25%]">{coin.low_24h}</div>
-                  <div className="basis-[20%]">{coin.price_change_24h}</div>
-                  <div className="basis-[20%]">{coin.market_cap}</div>
+                  <div className="basis-[25%] break-words overflow-hidden text-ellipsis whitespace-nowrap">{coin.low_24h}</div>
+                  <div className="basis-[20%] break-words overflow-hidden text-ellipsis whitespace-nowrap">{coin.price_change_24h}</div>
+                  <div className="basis-[20%] break-words overflow-hidden text-ellipsis whitespace-nowrap">{coin.market_cap}</div>
                 </div>
               );
             })}
