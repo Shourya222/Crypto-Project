@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCoinDetails } from "../services/fetchCoinDetails";
 import { CurrencyContext } from "../context/CurrencyContext";
+import PageLoader from "../Components/PageLoader/PageLoader";
 
 function CoinDetailsPage() {
   const { coinId } = useParams();
@@ -26,7 +27,7 @@ function CoinDetailsPage() {
   },[data])
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <PageLoader/>
   }
 
   if (isError) {
@@ -65,7 +66,7 @@ function CoinDetailsPage() {
       </div>
 
       <div className="md:2/3 w-full p-6"></div>
-        
+
     </div>
   );
 }

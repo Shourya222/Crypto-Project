@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { lazy, Suspense} from 'react'
 import { Route,Routes } from 'react-router-dom';
-import CoinDetailsPage from '../../pages/CoinDetailsPage';
-import Home from '../../pages/Home';
 import MainLayout from '../../pages/Layout';
+import PageLoader from '../PageLoader/PageLoader';
+const Home = lazy(() => import('../../pages/Home'));
+const CoinDetailsPage = lazy(() => import('../../pages/CoinDetailsPage'));
 
 function Routing() {
   return (
     <div>
         <Routes>
             <Route path='/' element = {<MainLayout />}>  {/*Any route(path) that starts with / must render ManiLayout */}
-                <Route index element={<Home />}/> {/*Child route */} {/*index is equivalent to path="/" */}
-                <Route path="/details/:coinId" element = {<CoinDetailsPage />} /> {/*Child route */}
+                <Route index element={
+                  <Suspense fallback={<PageLoader/>}>
+                    <Home />
+                  </Suspense>
+                  
+                  }/> {/*Child route */} {/*index is equivalent to path="/" */}
+                <Route path="/details/:coinId" element = {                 
+                  <Suspense fallback={<PageLoader />}>
+                    <CoinDetailsPage />
+                  </Suspense>
+                } /> 
             </Route>
 
         </Routes>
