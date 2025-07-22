@@ -23,9 +23,6 @@ function CoinDetailsPage() {
     staleTime: 100 * 60 * 2,
   });
 
-  useEffect(()=>{
-    console.log(data);
-  },[data])
 
   if (isLoading) {
     return <PageLoader/>
@@ -38,7 +35,7 @@ function CoinDetailsPage() {
   return (
         
     <div className="flex flex-col md:flex-row">
-      <div className="md:w-1/3 w-full flex flex-col items-center mt-6 md:mt-0 border-r-2 border-gray-500">
+      <div className="md:w-1/3 w-full flex flex-col items-center mt-6 p-4 md:mt-0 border-r-2 border-gray-500">
         <img alt={data?.name} src={data?.image?.large} className="h-52 mb-5" />
         <h1 className="text-4xl font-bold ">
             {data?.name}
@@ -48,18 +45,18 @@ function CoinDetailsPage() {
             {parse(data?.description?.en)}
         </p>
         <div 
-            className="w-full flex flex-col md:flex-row md:justify-around"
+            className="w-full flex flex-col md:flex-row md:justify-around gap-1 md:ml-3"
         >
             <div
                 className="flex items-center mb-4 md:mb-0"
             >
-                <h2 className="text-xl font-bold">Rank</h2>
-                <span className="ml-3 text-xl">{data?.market_cap_rank}</span>
+                <h2 className="text-xl font-bold ">Rank</h2>
+                <span className="ml-3 text-xl ">{data?.market_cap_rank}</span>
             </div>
             <div
                 className="flex items-center mb-4 md:mb-0"
             >
-                <h2 className="text-xl font-bold">Current Price</h2>
+                <h2 className="text-xl font-bold pl-0 border-l-0 border-gray-500 md:border-l-2 md:pl-2">Current Price</h2>
                 <span className="ml-3 text-xl">{data?.market_data.current_price[currency]}</span>
             </div>
 

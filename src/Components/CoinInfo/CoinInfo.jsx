@@ -32,8 +32,8 @@ function CoinInfo({historicData,setDays,setCoinInterval,days,currency}){
                 data={{
                     labels: historicData.prices.map(coinPrice => {
                         let date = new Date(coinPrice[0]); //Converting unix time stamp to date
-                        let time = date.getHours() > 12 ? `${date.getHours() - 12}:${date.getMinutes()} PM` : `${date.getHours()}:${date.getMinutes()} AM`
-                        return days === 1 ? time : date.toLocaleDateString();
+                        let time = date?.getHours() > 12 ? `${date?.getHours() - 12}:${date?.getMinutes()} PM` : `${date?.getHours()}:${date?.getMinutes()} AM`
+                        return days === 1 ? time : date?.toLocaleDateString();
                     }), 
                     datasets: [
                         {
