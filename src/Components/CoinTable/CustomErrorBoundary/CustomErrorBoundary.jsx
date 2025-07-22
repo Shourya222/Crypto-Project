@@ -2,7 +2,7 @@ import { ErrorBoundary } from "react-error-boundary"
 
 function CustomErrorBoundaryUI({error,resetErrorBoundary}){
     return(
-        <div role="alert alert-error" className="alert alert-error">
+        <div role="alert" className="alert alert-error">
             
             <p>Something went wrong:</p>
             <div>{error?.message}</div>
