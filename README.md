@@ -1,12 +1,81 @@
-# React + Vite
+# 💰 Crypto Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Track real-time prices, historical trends, and market stats for your favorite cryptocurrencies — built with **React**, **Tailwind CSS**, and powered by the **CoinGecko API**.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://crypto-project-eight.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔍 Searchable list of top cryptocurrencies with live prices  
+- 📈 Historical charts with selectable intervals (1d, 7d, 30d, etc.)  
+- 🌐 Dynamic routing for individual coin details  
+- 📊 Price, volume, and market cap info in real time  
+- 🎨 Smooth UI with Tailwind CSS and responsive design  
+
+---
+
+## 🛠️ Tech Stack
+
+React – Frontend UI & Components  
+Tailwind CSS – Utility-first styling  
+Axios – API fetching  
+React Router – Routing  
+Chart.js – Historical data charts  
+CoinGecko API – Market data  
+
+---
+
+## 📁 Folder Structure (Highlights)
+
+src/  
+├── components/        // UI Components like Navbar, Coins, etc.  
+├── pages/             // Pages like Home, CoinDetails  
+├── utils/             // API functions  
+└── App.jsx            // Routing setup  
+
+---
+
+## ⚙️ Setup Instructions
+
+1. Clone the repo  
+   git clone https://github.com/Shourya222/Crypto-Project.git  
+   cd Crypto-Project  
+
+2. Install dependencies  
+   npm install  
+
+3. Start the dev server  
+   npm run dev  
+
+4. Open http://localhost:5173 in your browser  
+
+---
+
+## 🌐 API Reference
+
+CoinGecko API – https://www.coingecko.com/en/api  
+
+---
+
+## 📦 Deployment
+
+Deployed using **Vercel**  
+Live App: https://crypto-project-eight.vercel.app/
+
+---
+
+## 📌 Future Improvements
+
+- Dark/Light mode toggle  
+- Better mobile responsiveness
+- Seaching Feature 
+
+---
+
+## 👨‍💻 Author
+
+Shourya – https://github.com/Shourya222  
+
+
